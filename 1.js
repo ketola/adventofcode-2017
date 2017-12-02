@@ -3,10 +3,9 @@ var input = '2175234281493376693817212167497687911136241765326152235785581689365
 
 let calc = (input) => {
 	let match = input.match(/(.)\1+/g);
-  return match ? match.map(m => m.slice(1))
-    						  .reduce((a,b) => a + b)
-    						  .split('')
-    						  .reduce((a,b) => parseInt(a) + parseInt(b)) : 0;
+  return match
+    ? match.map(m => m.slice(1)).reduce((a,b) => a + b).split('').reduce((a,b) => parseInt(a) + parseInt(b))
+    : 0;
 }
 
 let calcCircularInput = (input) => {
